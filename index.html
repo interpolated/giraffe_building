@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+ <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+    <script src= '../data/buildingTest.js'></script>
+    <script src= '../data/buildingTest2.js'></script>
+    <script src= '../vendor/mapbox-gl-draw.js'></script>
+    <link rel="stylesheet" href="../style/pocketgrid.css">
+    <link rel="stylesheet" href="../vendor/mapbox-gl-draw.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.js"></script>
+    <script src="https://npmcdn.com/@turf/turf@3.5.1/turf.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style3.css">
+    <script src='vendor/mapbox-gl-layers.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'></script>
+    <link href='vendor/mapbox-gl-layers.css' rel='stylesheet' />
+
+</head>
+<body>
+<div id="mapcontainer" class="block-group">
+	<div id='Oldmap' class="block"></div>
+	<div id='Newmap' class="block"></div>
+	<div id="all_inputs" class="block inputs">
+		<div id="build_sec_inputs" class="block form-group">
+			<p>rank: <br> <input id='rank' placeholder = 'input rank' type="number"></p>
+			<p>type: <br><input id='type'  placeholder = 'input type' type="text"></p>
+			<p>floors: <br><input id='floors'  placeholder = 'input floors' type="number"></p>
+		</div>		
+		<div id="apartment_area_inputs" class="block form-group">
+			<p>1br area: <br> <input id='1br area' placeholder = 'input rank' type="number" value="50"></p>
+			<p>2br area: <br><input id='2br area'  placeholder = 'input type' type="number" value="80"></p>
+			<p>3br area: <br><input id='3br area'  placeholder = 'input floors' type="number" value="100"></p>
+		</div>
+		<div id="apartment_split_inputs" class="block form-group">
+			<p>1br proportion: <br> <input id='1br proportion' placeholder = 'proportion' type="number" value="50"></p>
+			<p>2br proportion: <br><input id='2br proportion'  placeholder = 'proportion' type="number" value="40"></p>
+			<p>3br proportion: <br><input id='3br proportion'  placeholder = 'proportion' type="number" value="10"></p>
+		</div>		
+		<div id="apartment_outputs" class="block output">
+			<p id="buildingArea"></p>
+			<p id="totalApartments"></p>
+			<p id="splitReport"></p>
+
+		</div>		
+	</div>
+</div>
+<script src=../src/data.js></script>
+<script src=../src/postgresHandler.js></script>
+<script src=../src/sitePicker.js></script>
+<script src=../src/buildmap.js></script>
+<script src=../src/areaCalc.js></script>
+<!-- <script src=../src/lokiTest.js></script> -->
+
+</body>
+</html>
